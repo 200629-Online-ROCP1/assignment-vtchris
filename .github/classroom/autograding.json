@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "tests",
+      "setup": "mvn clean",
+      "run": "mvn test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 20,
+      "points": 100
+    }
+  ]
+}
