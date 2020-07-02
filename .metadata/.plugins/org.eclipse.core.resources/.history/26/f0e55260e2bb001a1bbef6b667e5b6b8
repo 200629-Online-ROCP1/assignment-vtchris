@@ -1,0 +1,11 @@
+package com.revature;
+
+import com.revature.objects.SportsCar;
+
+public class Driver {
+	public static void main(String[] args) {
+		SportsCar myCar = new SportsCar(4, "Maserati","red",4,200);
+		myCar.drive();
+		myCar.getMaxSpeed();
+	}
+}

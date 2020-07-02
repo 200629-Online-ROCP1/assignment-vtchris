@@ -1,0 +1,20 @@
+package com.revature;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		String s = "Hello World";
+		StringBuilder sb = new StringBuilder(s);
+		System.out.println(sb);
+		
+		//appending a StringBuilder is the same as concat a String except it mutates original string object.
+		sb.append(" Today is a great day!");
+		System.out.println(sb);
+		sb.reverse();
+		System.out.println(sb);
+		
+		StringBuilder sb1 = new StringBuilder("But I love you!");
+		System.out.println(sb1);
+	}
+
+}

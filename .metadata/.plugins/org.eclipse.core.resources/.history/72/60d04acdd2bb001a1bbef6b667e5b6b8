@@ -1,0 +1,24 @@
+package com.revature;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		Object o = new Object();
+		System.out.println(o.toString());
+		System.out.println(o.hashCode());
+	
+		University myUni = new University(300,25,"Revature",15);
+		University myUni2 = new University(300,25,"Revature",15);
+		
+		System.out.println(myUni);
+		System.out.println(myUni==myUni2);
+		System.out.println(myUni.equals(myUni2)); // logical equality based on override
+		
+		Integer i = new Integer(7);
+		System.out.println(i.toString());
+		System.out.println(i.getClass());
+		++i;
+		System.out.println(i);
+	}
+
+}

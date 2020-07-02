@@ -72,3 +72,24 @@
 2020-07-01 14:20:47,438 [Worker-51: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
 2020-07-01 14:21:36,474 [Worker-53: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-07-01 14:21:36,475 [Worker-53: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
+2020-07-01 14:21:36,477 [Worker-53: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-01 14:21:36,478 [Worker-53: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
+2020-07-01 20:26:56,737 [Worker-102: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-01 20:26:56,966 [Worker-102: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
+2020-07-01 20:26:56,967 [Worker-102: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-01 20:26:56,967 [Worker-102: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
+2020-07-02 09:39:38,842 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-07-02 09:42:13,091 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:42:13,091 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
+2020-07-02 09:42:13,094 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:42:13,094 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
+2020-07-02 09:43:38,808 [Worker-6: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:43:38,808 [Worker-6: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
+2020-07-02 09:43:38,810 [Worker-6: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:43:38,810 [Worker-6: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
+2020-07-02 09:47:32,241 [Worker-7: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:47:32,242 [Worker-7: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
+2020-07-02 09:47:32,243 [Worker-7: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:47:32,243 [Worker-7: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\test\resources
+2020-07-02 09:50:00,117 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-07-02 09:50:00,118 [Worker-1: Launching EvaluationService] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\vtchr\proj\java_class\assignment-vtchris\src\main\resources
