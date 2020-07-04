@@ -1,0 +1,33 @@
+package com.revature;
+import com.revature.problems.MyCustomError;
+import com.revature.problems.MyCustomException;
+import com.revature.problems.MyRuntimeException;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		System.out.println("The main method is starting.");
+		
+		try {
+			throwError();
+		}
+		catch(Error e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+	}
+	
+	public static void throwError () throws MyCustomError, MyRuntimeException	{
+		throw new MyCustomError("This is MY Custom Error message!!");
+	}
+	
+//	public static void throwException()  throws MyCustomException {
+//		throw new MyCustomException();
+//	}
+	
+	public static void throwRuntimeException() {
+		System.out.println("I am about to throw a runtime exception");
+		throw new MyRuntimeException();
+	}
+}

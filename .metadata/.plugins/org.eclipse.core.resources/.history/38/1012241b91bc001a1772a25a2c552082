@@ -1,0 +1,22 @@
+package com.revature;
+import java.util.Scanner;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Hello, Please enter your name:");
+		String name = scan.nextLine();
+		
+		System.out.println("Hello " + name + ". What is your favorite color?");
+		String color = scan.nextLine();
+		
+		System.out.println("How old are you " + name + ":");
+		int age = scan.nextInt();
+		
+		System.out.println("Well, " + name + ", you are " + age + " years old, so liking " + color + " is weird.");
+		
+	}
+
+}

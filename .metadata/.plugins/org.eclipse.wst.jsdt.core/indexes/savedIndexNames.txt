@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\vtchr\proj\java\assignment-vtchris\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2378608940.index
+3140073699.index
+1534335104.index
+385273786.index
+1429666813.index
+1138478184.index
