@@ -4,7 +4,29 @@ import java.util.List;
 import java.util.Map;
 
 public class EvaluationService {
-int i = 1;
+	
+	public static void main(String[] args) {
+		EvaluationService es = new EvaluationService();
+				
+		System.out.println(EvaluationService.SpeedConverter.printConversion(9));
+		System.out.println(es.printMegaBytesAndKiloBytes(2500));
+		System.out.println(es.printMegaBytesAndKiloBytes(-50));
+		System.out.println("Dog is barking at 23:00");
+		System.out.println(es.shouldWakeUp(true, 23));
+		System.out.println("Dog is NOT barking at 22:00");
+		System.out.println(es.shouldWakeUp(false, 22));
+		System.out.println(es.areEqualByThreeDecimalPlaces(100.123456, 100.1236679));
+		System.out.println("Teens in: 1,2,3");
+		System.out.println(TeenNumberChecker.hasTeen(1,2,3));
+		System.out.println("Teens in: 1,12,13");
+		System.out.println(TeenNumberChecker.hasTeen(1,12,13));
+		System.out.println(es.printYearsAndDays(-2));
+		System.out.println(es.printYearsAndDays(500_000));
+		System.out.println(es.printYearsAndDays(1_000_000));
+		System.out.println(es.printNumberInWord(9));
+		System.out.println(es.printNumberInWord(-4));
+		System.out.println(es.printNumberInWord(3));
+	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
 	 * 
@@ -69,9 +91,18 @@ int i = 1;
 	 * If the parameter kiloBytes is less than 0 then print the text "Invalid
 	 * Value".
 	 */
-	public String printMegaBytesAndKiloBytes(int XX) {
-		// TODO Write an implementation for this method declaration
-		return null;
+	public String printMegaBytesAndKiloBytes(int kb) {
+		
+		if(kb < 0) {
+			return "Invalid Value";
+		}
+		int MB = kb/1000;
+		int KB = 0;
+		if(kb - (MB * 1000) > 0) {
+			KB = kb - (MB * 1000);
+		}
+		
+		return kb + " KB = " + MB + " MB and " + KB + " KB";		
 	}
 
 	/**
@@ -94,8 +125,12 @@ int i = 1;
 	 * If the hourOfDay parameter is less than 0 or greater than 23, return false.
 	 */
 	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		if(isBarking && (hourOfDay < 8 || hourOfDay >= 22)) {
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 
 	/**
@@ -109,9 +144,15 @@ int i = 1;
 	 * 
 	 * Otherwise, return false;
 	 */
-	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
-		// TODO Write an implementation for this method declaration
-		return false;
+	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {		
+		firstNum = this.truncateDouble(firstNum,3);
+		secondNum = this.truncateDouble(secondNum,3);
+		
+		return firstNum == secondNum;
+	
+	}
+	private double truncateDouble(double num, int decimalPlaces) {
+		 return Double.valueOf(String.valueOf(num).substring(0,String.valueOf(num).indexOf(".")+decimalPlaces+1));
 	}
 
 	/**
@@ -126,17 +167,16 @@ int i = 1;
 	 */
 	static class TeenNumberChecker {
 
-		public static boolean hasTeen(int x, int y, int z) {
-			// TODO Write an implementation for this method declaration
-			return false;
+		public static boolean hasTeen(int x, int y, int z) {			
+			return (isTeen(x) || isTeen(y) || isTeen(z));
 		}
 
 		// We can initialize isTeen method first
 		// Then pass the parameter to hasTeen method
 
 		public static boolean isTeen(int number) {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return number >= 13 && number < 20; 
+			
 		}
 	}
 
@@ -156,10 +196,14 @@ int i = 1;
 	 * ZZ represents the calculated days.
 	 */
 	public String printYearsAndDays(long minutes) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		if(minutes < 0) {
+			return "Invalid Value";
+		}
+		int years = (int)Math.floor(minutes/525_600);
+		int days = (int)Math.floor((minutes - (years * 525_600))/1440);
+		
+		return minutes + " min = " + years + " y and " + days + " d";
 	}
-
 	/**
 	 * 7. Number In Word
 	 * 
@@ -170,8 +214,42 @@ int i = 1;
 	 * statement or switch statement whatever is easier for you.
 	 */
 	public String printNumberInWord(int number) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String strNbr = "";
+		switch(number) {
+			case 0:
+				strNbr = "ZERO";
+				break;
+			case 1:
+				strNbr = "ONE";
+				break;
+			case 2:
+				strNbr = "TWO";
+				break;
+			case 3:
+				strNbr = "THREE";
+				break;
+			case 4:
+				strNbr = "FOUR";
+				break;
+			case 5:
+				strNbr = "FIVE";
+				break;
+			case 6:
+				strNbr = "SIX";
+				break;
+			case 7:
+				strNbr = "SEVEN";
+				break;
+			case 8:
+				strNbr = "EIGHT";
+				break;
+			case 9:
+				strNbr = "NINE";
+				break;
+			default:
+				strNbr = "other";
+		}
+		return strNbr;
 	}
 
 	/**
