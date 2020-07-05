@@ -26,6 +26,13 @@ public class EvaluationService {
 		System.out.println(es.printNumberInWord(9));
 		System.out.println(es.printNumberInWord(-4));
 		System.out.println(es.printNumberInWord(3));
+		System.out.println(es.guessingGame(5, 10));
+		System.out.println(es.getGreatestCommonDivisor(6, 7));
+		System.out.println(es.getGreatestCommonDivisor(3, 9));
+		System.out.println(es.getGreatestCommonDivisor(5, 5));
+		System.out.println(es.getGreatestCommonDivisor(12, 8));
+		System.out.println(es.sumFirstAndLastDigit(123));
+		System.out.println(es.sumFirstAndLastDigit(456));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -272,8 +279,13 @@ public class EvaluationService {
 	 * and there is no resulting remainder.
 	 */
 	public int getGreatestCommonDivisor(int first, int second) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		
+		while(second > 0) {
+			int x = second;
+			second = first % second;
+			first = x;
+		}
+		return first;
 	}
 
 	/**
@@ -290,8 +302,13 @@ public class EvaluationService {
 	 * invalid value.
 	 */
 	public int sumFirstAndLastDigit(int num) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		if(num < 0) {
+			return -1;
+		}
+		int num1 = Integer.parseInt(Integer.toString(num).substring(0,1));
+		int num2 = num % 10;
+		
+		return num1+num2;
 	}
 
 	/**
@@ -558,6 +575,6 @@ public class EvaluationService {
 	 */
 	
 	public int guessingGame(int x, int y) {
-		return 0;
+		return (int)(Math.random() * y) + x;
 	}
 }
