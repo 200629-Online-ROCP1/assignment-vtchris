@@ -12,6 +12,7 @@ public class EvaluationService {
 		System.out.println(es.getScrabbleScore("cabbage"));
 		System.out.println(es.cleanPhoneNumber("1-800-222-5353"));
 		System.out.println(es.printMegaBytesAndKiloBytes(2500));
+		System.out.println(es.areEqualByThreeDecimalPlaces(3.0, 3.0));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -136,7 +137,8 @@ public class EvaluationService {
 	 * 
 	 * Otherwise, return false;
 	 */
-	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {		
+	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
+				
 		firstNum = this.truncateDouble(firstNum,3);
 		secondNum = this.truncateDouble(secondNum,3);
 		
@@ -144,7 +146,14 @@ public class EvaluationService {
 	
 	}
 	private double truncateDouble(double num, int decimalPlaces) {
-		 return Double.valueOf(String.valueOf(num).substring(0,String.valueOf(num).indexOf(".")+decimalPlaces+1));
+		double truncated = 0; 
+		
+		try {
+			truncated = Double.valueOf(String.valueOf(num).substring(0,String.valueOf(num).indexOf(".")+decimalPlaces+1));
+		}catch (IndexOutOfBoundsException e){
+			truncated = Double.valueOf(String.valueOf(num));
+		}		
+		 return truncated;
 	}
 
 	/**
