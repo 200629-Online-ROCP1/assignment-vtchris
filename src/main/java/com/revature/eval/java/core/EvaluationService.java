@@ -1,5 +1,4 @@
 package com.revature.eval.java.core;
-
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +32,7 @@ public class EvaluationService {
 		System.out.println(es.getGreatestCommonDivisor(12, 8));
 		System.out.println(es.sumFirstAndLastDigit(123));
 		System.out.println(es.sumFirstAndLastDigit(456));
+		System.out.println(es.reverse("Reverse"));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -318,8 +318,11 @@ public class EvaluationService {
 	 * reverses a String. Example: reverse("example"); -> "elpmaxe"
 	 */
 	public String reverse(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String reversed = "";
+		for(int i=string.length()-1;i>=0;i--) {
+			reversed += string.charAt(i);
+		}
+ 		return reversed;
 	}
 
 	/**
@@ -386,18 +389,15 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return this.sideOne == this.sideTwo  && this.sideOne == this.sideThree;
 		}
 
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return this.sideOne == this.sideTwo  || this.sideOne == this.sideThree || this.sideTwo == this.sideThree;
 		}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return this.sideOne != this.sideTwo  || this.sideOne != this.sideThree || this.sideTwo != this.sideThree;
 		}
 
 	}
