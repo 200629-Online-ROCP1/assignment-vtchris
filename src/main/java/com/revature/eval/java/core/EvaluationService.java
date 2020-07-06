@@ -11,6 +11,7 @@ public class EvaluationService {
 		
 		System.out.println(es.getScrabbleScore("cabbage"));
 		System.out.println(es.cleanPhoneNumber("1-800-222-5353"));
+		System.out.println(es.printMegaBytesAndKiloBytes(2500));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -87,10 +88,10 @@ public class EvaluationService {
 		if(kb < 0) {
 			return "Invalid Value";
 		}
-		int MB = kb/1000;
+		int MB = kb/1024;
 		int KB = 0;
-		if(kb - (MB * 1000) > 0) {
-			KB = kb - (MB * 1000);
+		if(kb - (MB * 1024) > 0) {
+			KB = kb - (MB * 1024);
 		}
 		
 		return kb + " KB = " + MB + " MB and " + KB + " KB";		
