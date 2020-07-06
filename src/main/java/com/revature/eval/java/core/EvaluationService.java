@@ -52,7 +52,13 @@ public class EvaluationService {
 		 */
 		public static String printConversion(double kph) {
 			long mph = EvaluationService.SpeedConverter.toMilesPerHour(kph);
-			return  (long)kph + " km/h = " + mph + " mi/h";
+			
+			if(mph < 0) {
+				return "Invalid Value";
+			}else {
+				return  (long)kph + " km/h = " + mph + " mi/h";
+			}
+			
 		}
 	}
 
