@@ -527,6 +527,9 @@ public class EvaluationService {
 	 */
 	public int calculateNthPrime(int k) {
 		// TODO Write an implementation for this method declaration
+		if(k == 0) {
+			throw new IllegalArgumentException();
+		}
 		return 0;
 	}
 
