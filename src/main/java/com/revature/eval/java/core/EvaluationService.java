@@ -1,4 +1,5 @@
 package com.revature.eval.java.core;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,8 @@ public class EvaluationService {
 		System.out.println(es.sumFirstAndLastDigit(123));
 		System.out.println(es.sumFirstAndLastDigit(456));
 		System.out.println(es.reverse("Reverse"));
+		System.out.println(es.acronym("Did This Work?"));
+		System.out.println(Arrays.toString(es.threeLuckyNumbers()));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -279,6 +282,9 @@ public class EvaluationService {
 	 * and there is no resulting remainder.
 	 */
 	public int getGreatestCommonDivisor(int first, int second) {
+		if(first < 10 || second < 10) {
+			return -1;
+		}
 		
 		while(second > 0) {
 			int x = second;
@@ -333,8 +339,14 @@ public class EvaluationService {
 	 * long name like Portable Network Graphics to its acronym (PNG).
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String acronym = "";
+		String[] strings = phrase.split(" ");
+				
+		for(int i=0;i<strings.length;i++) {
+			acronym += strings[i].charAt(0);
+		}
+		
+		return acronym;
 	}
 
 	/**
@@ -561,7 +573,13 @@ public class EvaluationService {
 	 */
 	
 	public int[] threeLuckyNumbers() {
-		return null;
+		int[] numbers = { randomNum(0,100), randomNum(0,100), randomNum(0,100)};
+		
+		return numbers;
+	}
+	
+	public int randomNum(int low, int high) {
+		return (int)(((Math.random() * (high - low)) + low)+1);
 	}
 	
 	/*
