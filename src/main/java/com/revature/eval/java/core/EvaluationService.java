@@ -8,34 +8,8 @@ public class EvaluationService {
 	public static void main(String[] args) {
 		EvaluationService es = new EvaluationService();
 				
-		System.out.println(EvaluationService.SpeedConverter.printConversion(9));
-		System.out.println(es.printMegaBytesAndKiloBytes(2500));
-		System.out.println(es.printMegaBytesAndKiloBytes(-50));
-		System.out.println("Dog is barking at 23:00");
-		System.out.println(es.shouldWakeUp(true, 23));
-		System.out.println("Dog is NOT barking at 22:00");
-		System.out.println(es.shouldWakeUp(false, 22));
-		System.out.println(es.areEqualByThreeDecimalPlaces(100.123456, 100.1236679));
-		System.out.println("Teens in: 1,2,3");
-		System.out.println(TeenNumberChecker.hasTeen(1,2,3));
-		System.out.println("Teens in: 1,12,13");
-		System.out.println(TeenNumberChecker.hasTeen(1,12,13));
-		System.out.println(es.printYearsAndDays(-2));
-		System.out.println(es.printYearsAndDays(500_000));
-		System.out.println(es.printYearsAndDays(1_000_000));
-		System.out.println(es.printNumberInWord(9));
-		System.out.println(es.printNumberInWord(-4));
-		System.out.println(es.printNumberInWord(3));
-		System.out.println(es.guessingGame(5, 10));
-		System.out.println(es.getGreatestCommonDivisor(6, 7));
-		System.out.println(es.getGreatestCommonDivisor(3, 9));
-		System.out.println(es.getGreatestCommonDivisor(5, 5));
-		System.out.println(es.getGreatestCommonDivisor(12, 8));
-		System.out.println(es.sumFirstAndLastDigit(123));
-		System.out.println(es.sumFirstAndLastDigit(456));
-		System.out.println(es.reverse("Reverse"));
-		System.out.println(es.acronym("Did This Work?"));
-		System.out.println(Arrays.toString(es.threeLuckyNumbers()));
+		
+		System.out.println(es.getScrabbleScore("cabbage"));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -429,8 +403,42 @@ public class EvaluationService {
 	 * 3 + 2*1 + 2*3 + 2 + 1 = 3 + 2 + 6 + 3 = 5 + 9 = 14
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		int score = 0;
+		
+		for(int i=0;i<string.length();i++) {
+			score += letterScore(string.charAt(i));
+		}
+		return score;
+	}
+	
+	private static int letterScore(char l) {
+		
+		switch(l) {
+		case 'd':
+		case 'g':
+			return 2;
+		case 'b':
+		case 'c':
+		case 'm':
+		case 'p':
+			return 3;
+		case 'f':
+		case 'h':
+		case 'v':
+		case 'w':
+		case 'y':
+			return 4;
+		case 'k':
+			return 5;
+		case 'j':
+		case 'x':
+			return 8;
+		case 'q':
+		case 'z':
+			return 10;
+		default:
+			return 1;
+		}
 	}
 
 	/**
