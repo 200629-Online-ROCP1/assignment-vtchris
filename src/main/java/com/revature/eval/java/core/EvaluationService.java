@@ -10,6 +10,7 @@ public class EvaluationService {
 				
 		
 		System.out.println(es.getScrabbleScore("cabbage"));
+		System.out.println(es.cleanPhoneNumber("1-800-222-5353"));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -475,7 +476,17 @@ public class EvaluationService {
 	 * NANP-countries, only 1 is considered a valid country code.
 	 */
 	public String cleanPhoneNumber(String string) {
-		return null;
+		string = string.replaceAll("[^0-9]", "");
+		
+		if(string.charAt(0) == '1') {	
+			string = string.substring(1);
+		}
+		if(string.length() != 10) {
+			throw new IllegalArgumentException();
+		}else {
+			return string;
+		}
+		
 	}
 
 	/**
@@ -506,6 +517,7 @@ public class EvaluationService {
 	 * a number is an Armstrong number.
 	 */
 	public boolean isArmstrongNumber(int input) {
+		// TODO Write an implementation for this method declaration
 		return false;
 	}
 
@@ -570,6 +582,7 @@ public class EvaluationService {
 	 * The sum of these multiples is 78.
 	 */
 	public int getSumOfMultiples(int i, int[] set) {
+		// TODO Write an implementation for this method declaration
 		return 0;
 	}
 	
