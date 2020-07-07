@@ -129,7 +129,7 @@ public class EvaluationService {
 	 * If the hourOfDay parameter is less than 0 or greater than 23, return false.
 	 */
 	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
-		if(isBarking && (hourOfDay < 8 || hourOfDay >= 22)) {
+		if(isBarking && ((hourOfDay >= 0 && hourOfDay < 8) || hourOfDay >= 22)) {
 			return true;
 		}else {
 			return false;
@@ -432,6 +432,7 @@ public class EvaluationService {
 	 * 3 + 2*1 + 2*3 + 2 + 1 = 3 + 2 + 6 + 3 = 5 + 9 = 14
 	 */
 	public int getScrabbleScore(String string) {
+		string = string.toLowerCase();
 		int score = 0;
 		
 		for(int i=0;i<string.length();i++) {
