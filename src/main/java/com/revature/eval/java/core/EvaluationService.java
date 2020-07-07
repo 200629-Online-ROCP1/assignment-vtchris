@@ -22,6 +22,7 @@ public class EvaluationService {
 		System.out.println(es.calculatePrimeFactorsOf(8));
 		System.out.println(es.calculateNthPrime(100));
 		System.out.println(es.isPangram("the quick brown fox jumps over the lazy dog"));
+		System.out.println(es.acronym("Complementary metal-oxide semiconductor"));
 		
 	}
 	/**
@@ -341,13 +342,14 @@ public class EvaluationService {
 	 */
 	public String acronym(String phrase) {
 		String acronym = "";
+		phrase = phrase.replace("-", " ");
 		String[] strings = phrase.split(" ");
 				
 		for(int i=0;i<strings.length;i++) {
 			acronym += strings[i].charAt(0);
 		}
 		
-		return acronym;
+		return acronym.toUpperCase();
 	}
 
 	/**
