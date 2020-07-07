@@ -1,6 +1,5 @@
 package com.revature.eval.java.core;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +20,8 @@ public class EvaluationService {
 		System.out.println(es.isArmstrongNumber(123));
 		System.out.println(es.isArmstrongNumber(153));
 		System.out.println(es.calculatePrimeFactorsOf(8));
+		System.out.println(es.calculateNthPrime(100));
+		System.out.println(es.isPangram("the quick brown fox jumps over the lazy dog"));
 		
 	}
 	/**
@@ -580,7 +581,6 @@ public class EvaluationService {
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
 		List<Long> factors = new ArrayList<Long>();
-		// TODO Write an implementation for this method declaration
 		System.out.println("Primes follow");
 		for(int i = 2;i<=l;i++) {
 			while(l % i == 0) {
@@ -604,13 +604,30 @@ public class EvaluationService {
 	 * numbers, pretend they don't exist and implement them yourself.
 	 */
 	public int calculateNthPrime(int k) {
-		// TODO Write an implementation for this method declaration
 		if(k == 0) {
 			throw new IllegalArgumentException();
 		}
-		return 0;
+		int count = 0;
+		int i = 1;
+		while(count < k) {	
+			++i;
+			if(primeChecker(i) == true) {
+				count++;
+			}		
+		}
+		return i;
+		
 	}
 
+	public static boolean primeChecker(long n) {		
+		for(int i = 2;i<n;i++) {
+			while(n % i == 0) {
+				return false;				
+			}
+		}
+		return true;
+	}
+	
 	/**
 	 * 19. Pangram
 	 * 
@@ -625,7 +642,19 @@ public class EvaluationService {
 	 */
 	public boolean isPangram(String string) {
 		// TODO Write an implementation for this method declaration
-		return false;
+		string = string.replace(" ", "");
+		String[] letters = string.toLowerCase().split("");
+		Map<String,Integer> uniqueLetters = new HashMap<String,Integer>();
+		
+		for(int i = 0;i<letters.length;i++) {
+			// Determine if letter is already in map
+			if(uniqueLetters.get(letters[i]) == null) {
+				// If letter is not there, add it
+				uniqueLetters.put(letters[i], 1);
+			}
+			
+		}		
+		return uniqueLetters.size()  == 26;
 	}
 
 	/**
