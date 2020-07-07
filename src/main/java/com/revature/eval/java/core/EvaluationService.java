@@ -1,5 +1,6 @@
 package com.revature.eval.java.core;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ public class EvaluationService {
 		System.out.println(es.printMegaBytesAndKiloBytes(2500));
 		System.out.println(es.areEqualByThreeDecimalPlaces(3.0, 3.0));
 		System.out.println(EvaluationService.SpeedConverter.printConversion(1.5));
+		System.out.println(es.wordCount("One Fish Two Fish"));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -516,7 +518,21 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		String[] words = string.toLowerCase().split(" ");
+		Map<String, Integer> wordCounts = new HashMap<String, Integer>();
+		
+		for(int i = 0;i<words.length;i++) {
+			Integer count = wordCounts.get(words[i]);
+			if(count == null) {
+				wordCounts.put(words[i], 1);
+			}else {
+				wordCounts.put(words[i], count+1);
+			}
+			
+			System.out.println(words[i]);
+		}
+		
+		return wordCounts;
 	}
 
 	/**
