@@ -1,4 +1,5 @@
 package com.revature.eval.java.core;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,9 @@ public class EvaluationService {
 		System.out.println(EvaluationService.SpeedConverter.printConversion(1.5));
 		System.out.println(es.wordCount("One Fish Two Fish"));
 		System.out.println(es.wordCount("one,\ntwo,\nthree"));
+		System.out.println(es.isArmstrongNumber(123));
+		System.out.println(es.isArmstrongNumber(153));
+		System.out.println(es.calculatePrimeFactorsOf(8));
 		
 	}
 	/**
@@ -555,8 +559,15 @@ public class EvaluationService {
 	 * a number is an Armstrong number.
 	 */
 	public boolean isArmstrongNumber(int input) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		String[] digits = String.valueOf(input).split("");
+		int pow = digits.length;
+		int result = 0;
+		
+		for(int i=0;i<digits.length;i++) {
+			result += Math.pow(Integer.parseInt(digits[i]), pow);
+		}
+				
+		return input == result;
 	}
 
 	/**
@@ -568,8 +579,17 @@ public class EvaluationService {
 	 * Note that 1 is not a prime number.
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
+		List<Long> factors = new ArrayList<Long>();
 		// TODO Write an implementation for this method declaration
-		return null;
+		System.out.println("Primes follow");
+		for(int i = 2;i<=l;i++) {
+			while(l % i == 0) {
+				l /= i;
+				factors.add((long)i);				
+			}
+		}
+		
+		return factors;
 	}
 
 	/**
