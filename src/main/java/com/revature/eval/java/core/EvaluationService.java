@@ -641,7 +641,6 @@ public class EvaluationService {
 	 * insensitive. Input will not contain non-ASCII symbols.
 	 */
 	public boolean isPangram(String string) {
-		// TODO Write an implementation for this method declaration
 		string = string.replace(" ", "");
 		String[] letters = string.toLowerCase().split("");
 		Map<String,Integer> uniqueLetters = new HashMap<String,Integer>();
@@ -651,9 +650,9 @@ public class EvaluationService {
 			if(uniqueLetters.get(letters[i]) == null) {
 				// If letter is not there, add it
 				uniqueLetters.put(letters[i], 1);
-			}
+			}	
+		}
 			
-		}		
 		return uniqueLetters.size()  == 26;
 	}
 
