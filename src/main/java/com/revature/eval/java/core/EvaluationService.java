@@ -258,7 +258,7 @@ public class EvaluationService {
 				strNbr = "NINE";
 				break;
 			default:
-				strNbr = "other";
+				strNbr = "OTHER";
 		}
 		return strNbr;
 	}
