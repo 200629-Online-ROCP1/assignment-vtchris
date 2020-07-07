@@ -13,6 +13,7 @@ public class EvaluationService {
 		System.out.println(es.cleanPhoneNumber("1-800-222-5353"));
 		System.out.println(es.printMegaBytesAndKiloBytes(2500));
 		System.out.println(es.areEqualByThreeDecimalPlaces(3.0, 3.0));
+		System.out.println(EvaluationService.SpeedConverter.printConversion(1.5));
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -58,7 +59,7 @@ public class EvaluationService {
 			if(mph < 0) {
 				return "Invalid Value";
 			}else {
-				return  (long)kph + " km/h = " + mph + " mi/h";
+				return  kph + " km/h = " + mph + " mi/h";
 			}
 			
 		}
