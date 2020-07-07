@@ -16,6 +16,8 @@ public class EvaluationService {
 		System.out.println(es.areEqualByThreeDecimalPlaces(3.0, 3.0));
 		System.out.println(EvaluationService.SpeedConverter.printConversion(1.5));
 		System.out.println(es.wordCount("One Fish Two Fish"));
+		System.out.println(es.wordCount("one,\ntwo,\nthree"));
+		
 	}
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -517,19 +519,22 @@ public class EvaluationService {
 	 * free: 1
 	 */
 	public Map<String, Integer> wordCount(String string) {
-		// TODO Write an implementation for this method declaration
+		string = string.replace("\n", "");
+		string = string.replace(",", " ");
+	
 		String[] words = string.toLowerCase().split(" ");
 		Map<String, Integer> wordCounts = new HashMap<String, Integer>();
 		
 		for(int i = 0;i<words.length;i++) {
+			// Determine if word is already in map
 			Integer count = wordCounts.get(words[i]);
 			if(count == null) {
+				// If word is not there, add it
 				wordCounts.put(words[i], 1);
 			}else {
+				// If word is there, increment the count
 				wordCounts.put(words[i], count+1);
-			}
-			
-			System.out.println(words[i]);
+			}			
 		}
 		
 		return wordCounts;
