@@ -8,21 +8,7 @@ public class EvaluationService {
 	
 	public static void main(String[] args) {
 		EvaluationService es = new EvaluationService();
-				
-		
-		System.out.println(es.getScrabbleScore("cabbage"));
-		System.out.println(es.cleanPhoneNumber("1-800-222-5353"));
-		System.out.println(es.printMegaBytesAndKiloBytes(2500));
-		System.out.println(es.areEqualByThreeDecimalPlaces(3.0, 3.0));
-		System.out.println(EvaluationService.SpeedConverter.printConversion(1.5));
-		System.out.println(es.wordCount("One Fish Two Fish"));
-		System.out.println(es.wordCount("one,\ntwo,\nthree"));
-		System.out.println(es.isArmstrongNumber(123));
-		System.out.println(es.isArmstrongNumber(153));
-		System.out.println(es.calculatePrimeFactorsOf(8));
-		System.out.println(es.calculateNthPrime(100));
-		System.out.println(es.isPangram("the quick brown fox jumps over the lazy dog"));
-		System.out.println(es.acronym("Complementary metal-oxide semiconductor"));
+	
 		
 	}
 	/**
@@ -670,9 +656,26 @@ public class EvaluationService {
 	 * 
 	 * The sum of these multiples is 78.
 	 */
-	public int getSumOfMultiples(int i, int[] set) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+	public int getSumOfMultiples(int n, int[] set) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>(); 
+				
+		for(int i=0;i<set.length;i++) {	
+			int multiplier = 1;
+			
+			while(multiplier * set[i] < n) {
+				if(numbers.contains(multiplier * set[i]) == false) {
+					numbers.add(multiplier * set[i]);
+				}
+				++multiplier;
+			}
+		}
+		
+		int sum = 0;		
+		for(int i =0;i<numbers.size();i++) {
+			sum += numbers.get(i);
+		}
+		
+		return sum;
 	}
 	
 	/**
