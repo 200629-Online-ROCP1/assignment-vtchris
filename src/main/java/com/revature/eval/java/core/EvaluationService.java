@@ -8,7 +8,8 @@ public class EvaluationService {
 	
 	public static void main(String[] args) {
 		EvaluationService es = new EvaluationService();
-	
+		int[] set= {4,6};
+		System.out.println(es.getSumOfMultiples(15, set));
 		
 	}
 	/**
