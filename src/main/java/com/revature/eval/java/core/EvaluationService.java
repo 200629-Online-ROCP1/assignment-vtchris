@@ -671,12 +671,12 @@ public class EvaluationService {
 			}
 		}
 		
-		int sum = 0;		
+		int total=0;		
 		for(int i =0;i<numbers.size();i++) {
-			sum += numbers.get(i);
+			total += numbers.get(i);
 		}
 		
-		return sum;
+		return total;
 	}
 	
 	/**
